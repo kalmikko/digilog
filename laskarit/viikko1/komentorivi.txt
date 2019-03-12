@@ -1,0 +1,14 @@
+kurssit
+└── _ot2019
+    ├── ot-harjoitustyo
+    │   ├── laskarit
+    │   │   └── viikko1
+    │   └── README.md
+    └── vko1
+        ├── eka.txt
+        ├── kolmas.txt
+        └── tiedostoja
+            ├── file1
+            ├── file2
+            └── file3
+
