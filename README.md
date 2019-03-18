@@ -12,4 +12,5 @@
 [komentorivi.txt](https://github.com/kalmikko/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 **Viikko 2**
-[testikattavuus.png](https://github.com/kalmikko/ot-harjoitustyo/blob/master/laskarit/viikko2/testikattavuus.png)
+
+[testikattavuus.png](https://github.com/kalmikko/ot-harjoitustyo/blob/master/laskarit/viikko2/testikattavuus.png) *huom, en jaksanut tehdä kassapaate luokan testejä loppuun asti, liian aikaavievää
