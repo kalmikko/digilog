@@ -37,7 +37,9 @@ public class MaksukorttiTest {
     
     @Test
     public void kortinSaldoEiMuutuJosseiRahaa() {
+        int saldoalussa = kortti.saldo();
         kortti.otaRahaa(100);
-        assertEquals("saldo: 0.10", kortti.toString());  
+        int saldolopussa = kortti.saldo();
+        assertTrue(saldoalussa==saldolopussa);  
     }
 }
