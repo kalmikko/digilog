@@ -13,3 +13,7 @@ This project will be a catalogue of books and movies that the user has watched. 
 - assign a genre to a book/movie
 
 - create new genres and forms of media that the database can store
+
+- list all movies/books
+
+- list movies/books with some parameters
