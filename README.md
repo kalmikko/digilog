@@ -1,5 +1,6 @@
 **Ohjelmistotekniikka, harjoitustyö**
 
+[tyoaikakirjanpito.txt](https://github.com/kalmikko/ot-harjoitustyo/blob/master/tyoaikakirjanpito.txt)
 
 
 **Tehtävät**
@@ -14,3 +15,6 @@
 **Viikko 2**
 
 [testikattavuus.png](https://github.com/kalmikko/ot-harjoitustyo/blob/master/laskarit/viikko2/testikattavuus.png) *huom, en jaksanut tehdä kassapaate luokan testejä loppuun asti, liian aikaavievää*
+
+[vaatimusmaarittely.md](https://github.com/kalmikko/ot-harjoitustyo/blob/master/Digilog/vaatimusmaarittely.md)
+
