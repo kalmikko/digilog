@@ -23,3 +23,5 @@
 [monopoli_luokkakaavio.pdf](https://github.com/kalmikko/ot-harjoitustyo/blob/master/laskarit/viikko3/monopoli_luokkakaavio2.pdf)
 
 [machine_sekvenssikaavio.pdf](https://github.com/kalmikko/ot-harjoitustyo/blob/master/laskarit/viikko3/machine_sekvenssikaavio.pdf)
+
+*huom, en tehnyt viimeistä sekvenssikaaviota. Huono piste/aika suhde*
