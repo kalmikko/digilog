@@ -1,3 +1,5 @@
+package digilog;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,7 +13,8 @@
 public class Interface {
     
     //use this method to do a basic text interface
-    public void Run(){
+    public void run(Scanner reader){
+        System.out.println("Welcome to Digilog version 0.03\n");
         
     }
     
