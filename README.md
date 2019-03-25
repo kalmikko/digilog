@@ -18,6 +18,7 @@ This project will be a catalogue of books and movies that the user has watched. 
 
 
 *vanhaa, poista tämän alta ennen deadlinea*
+
 **Ohjelmistotekniikka, harjoitustyö**
 
 [tyoaikakirjanpito.txt](https://github.com/kalmikko/ot-harjoitustyo/blob/master/tyoaikakirjanpito.txt)
