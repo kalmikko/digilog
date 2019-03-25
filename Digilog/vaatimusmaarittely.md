@@ -1,6 +1,6 @@
 **Digilog**
 
-This project will be a catalogue of books and movies that the user has watched. The user will be able to create an username, and based on that there will be created a SQL database that is able to store different types of medie the user has consumed.
+This project will be a catalogue of books and movies that the user has watched. The user will be able to create an username, and based on that there will be created a SQL database that is able to store different types of media the user has consumed.
 
 **Basic functionality**
 
