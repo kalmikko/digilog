@@ -17,8 +17,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class SQLdatabase {
     
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+//    @Autowired
+//    private JdbcTemplate jdbcTemplate;
     
     //create a blank SQL database
     public void createEmptyDatabase() throws SQLException, ClassNotFoundException{
@@ -32,13 +32,13 @@ public class SQLdatabase {
         stat.executeUpdate("CREATE TABLE MediaGenre(mediaID int, genreID int, FOREIGN KEY (mediaID) REFERENCES Media(id),"
                 + " FOREIGN KEY(genreID) REFERENCES Genre(id));");
         stat.executeUpdate("CREATE TABLE MediaTypeliittotaulu(mediaID int, typeID int, FOREIGN KEY (mediaID) REFERENCES Media(id),"
-                + " FOREIGN KEY (typeID) REFERENCES Type(id));");
+                + " FOREIGN KEY (typeID) REFERENCES Mediatype(id));");
     }
     
-    public Statement connectToDB() throws ClassNotFoundException, SQLException{
-        Class.forName("com.mysql.jdbc.Driver");
-        String getConnectionString = "jdbc:sqlite:Digilog.db";
-        Connection conn = DriverManager.getConnection(getConnectionString);
+    public Statement connectToDB() throws SQLException{
+//        String dir = "/home/kalmikko/kurssit/_ot2019/ot-harjoitustyo/Digilog/"
+//                + "Digilog/src/main/java/digilog";
+        Connection conn = DriverManager.getConnection("jdbc:h2:./Digilog","sa","");
         Statement stat = conn.createStatement();
         return stat;
     }
@@ -53,37 +53,38 @@ public class SQLdatabase {
         
     }
     
-    public void addGenre(String gName){
-        int count = 0;
-        jdbcTemplate.update("INSERT INTO Genre (id,genre) "
-                + "VALUES (?,?)", count,gName);
+    public void addGenre(String gName) throws SQLException{
+        Statement stat = connectToDB();
+        int id = getGenreTypeCount() + 1;
+//        stat.executeUpdate("INSERT INTO Genre (id, genre) VALUES ("+id+", '"
+//        +gName+"');");
     }
     
-    public void removeGenre(String gName){
-        jdbcTemplate.update("DELETE FROM Genre WHERE genre=(?)",gName);
+    public void removeGenre(){
+        
     }
     
-    public void addMediatype(String tName){
-        int count = 0;
-        jdbcTemplate.update("INSERT INTO MeadiaType (id,type) "
-                + "VALUES (?,?)", count,tName);
+    public void addMediatype(String tName) throws SQLException{
+        Statement stat = connectToDB();
+        int id = getMediaTypeCount() + 1;
+//        stat.executeUpdate("INSERT INTO MediaType(id, type) VALUES ("+id+", '"
+//        +tName+"');");
     }
     
-    public void removeMediaType(String tName){
-        jdbcTemplate.update("DELETE FROM MediaType WHERE type=(?)",tName);
+    public void removeMediaType(){
+        
     }
     
-    public int getMediaTypeCount(){
-        List<String> mRows = jdbcTemplate.query(
-        "SELECT * FROM MediaType",
-        (rs, rowNum) -> rs.getString("type"));
-        return mRows.size();
+    public int getMediaTypeCount() throws SQLException{
+        Statement stat = connectToDB();
+        ResultSet output = stat.executeQuery("SELECT COUNT(*) FROM Mediatype;");
+        //System.out.println("testi "+output);
+        return 0;
     }
     
-    public int getGenreTypeCount(){
-        List<String> gRows = jdbcTemplate.query(
-        "SELECT * FROM Genre",
-        (rs, rowNum) -> rs.getString("genre"));
-        return gRows.size();
+    public int getGenreTypeCount() throws SQLException{
+        Statement stat = connectToDB();
+        ResultSet output = stat.executeQuery("SELECT COUNT(*) FROM Genre;");
+        return 0;
     }
 }

@@ -36,17 +36,19 @@ public class Interface {
             String command = reader.nextLine();
             if(command.equals("x")){break;}
             else if(command.equals("?")){}
-            else if(command.equals("tyhjaSQLdatabase")){
-                database = new SQLdatabase();
+            else if(command.equals("luotaulut")){
                 database.createEmptyDatabase();
             }
+            else if(command.equals("1")){System.out.println("to be added");}
+            else if(command.equals("2")){System.out.println("to be added");}
+            else if(command.equals("3")){System.out.println("to be added");}
             else if(command.equals("4")){changeSettings(reader);}
             else{System.out.println("command not recognized");;}
             
         }
     }
     
-    public void changeSettings(Scanner reader){
+    public void changeSettings(Scanner reader) throws SQLException{
         int mediatypecount = database.getMediaTypeCount();
         int genretypecount = database.getGenreTypeCount();
         
@@ -66,12 +68,16 @@ public class Interface {
                 System.out.println("\t\t give new mediatype name (Book, Movie etc.)\n");
                 String tName = reader.nextLine();
                 database.addMediatype(tName);
+                System.out.println("functionality to be added\n");
             }
             else if(command.equals("2")){
                 System.out.println("\t\t give new genre name (comedy, drama etc.)\n");
                 String gName = reader.nextLine();
                 database.addMediatype(gName);
+                System.out.println("functionality to be added\n");
             }
+            else if(command.equals("3")){System.out.println("to be added");}
+            else if(command.equals("4")){System.out.println("to be added");}
         }
         
     }
