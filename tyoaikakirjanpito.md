@@ -2,4 +2,8 @@
 
 26.3 ohjelmointiprojektin luokkarakenne ~2h
 
-28.3 ohjelmointiprojektin sql tietokannan valmistelu ~2h
+28.3 ohjelmointiprojektin springframework valmistelu ~2h
+
+1.4 ohjelmointiprojektin sql toiminnallisuuden aloittelu ~3h
+
+2.4 ohjelmointiprojektin testien rakentaminen ~2h
