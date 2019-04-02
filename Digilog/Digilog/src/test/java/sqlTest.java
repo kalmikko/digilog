@@ -7,6 +7,7 @@
 import digilog.DigilogSovellus;
 import digilog.SQLdatabase;
 import java.sql.SQLException;
+import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -39,18 +40,35 @@ public class sqlTest {
 //    }
     
     @Test
-    public void addingGenreType() throws SQLException, ClassNotFoundException{
-        sqldb.createEmptyDatabase("testdb");
-        int genrecount = sqldb.getGenreCount("testdb");
-        sqldb.addGenre("testgenre1","testdb");
-        System.out.println(genrecount+"  "+sqldb.getGenreCount("testdb"));
-        assertTrue(genrecount==sqldb.getGenreCount("testdb")-1);
-    }
-//    @Test
-//    public void addingMediaType() throws SQLException, ClassNotFoundException{
+    public void addingAndRemovingGenreType() throws SQLException, ClassNotFoundException{
 //        sqldb.createEmptyDatabase("testdb");
-//        int typecount = sqldb.getTypeCount("testdb");
-//        sqldb.addType("testtype1","testdb");
-//        assertTrue(typecount==sqldb.getTypeCount("testdb")-1);
-//    }
+        int genrecount = sqldb.getGenreCount("Digilog");
+        sqldb.addGenre("testgenre1","Digilog");
+        //System.out.println(genrecount+"  "+sqldb.getGenreCount("testdb"));
+        assertTrue(genrecount==sqldb.getGenreCount("Digilog")-1);
+        sqldb.removeGenre("testgenre1", "Digilog");
+        assertTrue(genrecount==sqldb.getGenreCount("Digilog"));
+    }
+    @Test
+    public void addingAndRemovingMediaType() throws SQLException, ClassNotFoundException{
+        //sqldb.createEmptyDatabase("testdb");
+        int typecount = sqldb.getTypeCount("Digilog");
+        sqldb.addType("testtype1","Digilog");
+        assertTrue(typecount==sqldb.getTypeCount("Digilog")-1);
+        sqldb.removeType("testtype1", "Digilog");
+        assertTrue(typecount==sqldb.getTypeCount("Digilog"));
+    }
+    @Test
+    public void genreAndTypeListCountsAreCorrect() throws SQLException{
+        sqldb.addGenre("testgenre1", "Digilog");
+        sqldb.addType("testtype1", "Digilog");
+        List<String> types = sqldb.listTypes("Digilog");
+        List<String> genres = sqldb.listGenres("Digilog");
+        int typecount = sqldb.getTypeCount("Digilog");
+        int genrecount = sqldb.getGenreCount("Digilog");
+        assertTrue(types.size()==typecount);
+        assertTrue(genres.size()==genrecount);
+        sqldb.removeType("testtype1", "Digilog");
+        sqldb.removeGenre("testgenre1", "Digilog");
+    }
 }
