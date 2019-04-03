@@ -7,3 +7,5 @@ This project will be a catalogue of books and movies that the user has watched. 
 [vaatimusmaarittely.md](https://github.com/kalmikko/ot-harjoitustyo/blob/master/Digilog/vaatimusmaarittely.md)
 
 [tyoaikakirjanpito.md](https://github.com/kalmikko/ot-harjoitustyo/blob/master/tyoaikakirjanpito.md)
+
+[arkkitehtuurikuvaus.md](https://github.com/kalmikko/ot-harjoitustyo/blob/master/tyoaikakirjanpito.md)
