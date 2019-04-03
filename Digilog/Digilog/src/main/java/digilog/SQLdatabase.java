@@ -22,7 +22,7 @@ public class SQLdatabase {
 //    private JdbcTemplate jdbcTemplate;
     
     //create a blank SQL database
-    public void createEmptyDatabase(String name) throws SQLException, ClassNotFoundException{
+    public void createEmptyDatabase(String name) throws SQLException, ClassNotFoundException {
         Statement stat = connectToDB(name);
         stat.executeUpdate("CREATE TABLE Addition(id int, pvm date,comment varchar(500),user varchar(50), PRIMARY KEY (id));");
         stat.executeUpdate("CREATE TABLE Media(id int, name varchar(100), published date, length bigint, PRIMARY KEY (id));");
@@ -36,35 +36,35 @@ public class SQLdatabase {
                 + " FOREIGN KEY (typeID) REFERENCES Type(id));");
     }
     
-    public Statement connectToDB(String name) throws SQLException{
+    public Statement connectToDB(String name) throws SQLException {
 //        String dir = "/home/kalmikko/kurssit/_ot2019/ot-harjoitustyo/Digilog/"
 //                + "Digilog/src/main/java/digilog";
-        Connection conn = DriverManager.getConnection("jdbc:h2:./"+name,"sa","");
+        Connection conn = DriverManager.getConnection("jdbc:h2:./" + name, "sa", "");
         Statement stat = conn.createStatement();
         return stat;
     }
     
     //add a movie/book (do user input logic elsewhere)
-    public void addAddition(String username){
+    public void addAddition(String username) {
         
     }
     
     //remove data (do user input logic elsewhere)
-    public void removeAddition(){
+    public void removeAddition() {
         
     }
     
-    public List<String> listGenres(String dbName) throws SQLException{
+    public List<String> listGenres(String dbName) throws SQLException {
         Statement stat = connectToDB(dbName);
         ResultSet output = stat.executeQuery("SELECT name AS table FROM Genre;");
         output.first();
         int i = 0;
         List<String> genres = new ArrayList<>();
-        while(true){
+        while (true) {
             i++;
             //System.out.println(output.getString("table"));
             genres.add(output.getString("table"));
-            if(i==getGenreCount(dbName)){
+            if (i == getGenreCount(dbName)) {
                 break;
             }
             output.next();
@@ -72,17 +72,17 @@ public class SQLdatabase {
         return genres;
     }
     
-    public List<String> listTypes(String dbName) throws SQLException{
+    public List<String> listTypes(String dbName) throws SQLException {
         Statement stat = connectToDB(dbName);
         ResultSet output = stat.executeQuery("SELECT name AS table FROM Type;");
         output.first();
         int i = 0;
         List<String> types = new ArrayList<>();
-        while(true){
+        while (true) {
             i++;
             //System.out.println(output.getString("table"));
             types.add(output.getString("table"));
-            if(i==getTypeCount(dbName)){
+            if (i == getTypeCount(dbName)) {
                 break;
             }
             output.next();
@@ -90,36 +90,36 @@ public class SQLdatabase {
         return types;
     }
     
-    public List<String> listAdditions(){
+    public List<String> listAdditions() {
         
         return null;
     }
     
-    public void addGenre(String gName, String dbName) throws SQLException{
+    public void addGenre(String gName, String dbName) throws SQLException {
         Statement stat = connectToDB("Digilog");
         int id = getGenreCount(dbName) + 1;
-        stat.executeUpdate("INSERT INTO Genre (id, name) VALUES ("+id+", '"
-        +gName+"');");
+        stat.executeUpdate("INSERT INTO Genre (id, name) VALUES (" + id + ", '"
+            + gName + "');");
     }
     
-    public void removeGenre(String gName, String dbName) throws SQLException{
+    public void removeGenre(String gName, String dbName) throws SQLException {
         Statement stat = connectToDB(dbName);
-        stat.executeUpdate("DELETE FROM Genre WHERE name='"+gName+"';");
+        stat.executeUpdate("DELETE FROM Genre WHERE name='" + gName + "';");
     }
     
-    public void addType(String tName, String dbName) throws SQLException{
+    public void addType(String tName, String dbName) throws SQLException {
         Statement stat = connectToDB(dbName);
         int id = getTypeCount(dbName) + 1;
-        stat.executeUpdate("INSERT INTO Type (id, name) VALUES ("+id+", '"
-        +tName+"');");
+        stat.executeUpdate("INSERT INTO Type (id, name) VALUES (" + id + ", '"
+            + tName + "');");
     }
     
-    public void removeType(String tName,String dbName) throws SQLException{
+    public void removeType(String tName, String dbName) throws SQLException {
         Statement stat = connectToDB(dbName);
-        stat.executeUpdate("DELETE FROM Type WHERE name='"+tName+"';");
+        stat.executeUpdate("DELETE FROM Type WHERE name='" + tName + "';");
     }
     
-    public int getTypeCount(String dbName) throws SQLException{
+    public int getTypeCount(String dbName) throws SQLException {
         Statement stat = connectToDB(dbName);
         ResultSet output = stat.executeQuery("SELECT * FROM Type;");
         output.last();
@@ -127,7 +127,7 @@ public class SQLdatabase {
         return output.getRow();
     }
     
-    public int getGenreCount(String dbName) throws SQLException{
+    public int getGenreCount(String dbName) throws SQLException {
         Statement stat = connectToDB(dbName);
         ResultSet output = stat.executeQuery("SELECT * FROM Genre;");
         output.last();

@@ -7,3 +7,7 @@
 1.4 ohjelmointiprojektin sql toiminnallisuuden aloittelu ~3h
 
 2.4 ohjelmointiprojektin testien rakentaminen ~2h
+
+3.4 ohjelmointiprojektin checkstyle toteutus ~1h
+
+tot: ~11h
