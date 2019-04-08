@@ -1,3 +1,0 @@
-wget https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/misc/Unicafe.zip
-unzip Unicafe.zip
-rm Unicafe.zip
