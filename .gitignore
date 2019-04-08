@@ -1,5 +1,6 @@
 laskarit/viikko2/Unicafe/target/
 laskarit/viikko2/Unicafe/nbproject/
 Digilog/target
-/Digilog/Digilog/target/
-/Digilog/Digilog/nbproject/
+/Digilog/target/
+.gitignore.save
+.README.md.swp
