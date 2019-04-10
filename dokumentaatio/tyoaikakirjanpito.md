@@ -10,4 +10,10 @@
 
 3.4 ohjelmointiprojektin checkstyle toteutus ~1h
 
-tot: ~11h
+8.4 sql toimivuuden laajennus ~3h
+
+9.4 sql toimivuuden laajennus ~2h
+
+10.4 checkstyle, testiluokat, jne ~2h
+
+tot: ~18h

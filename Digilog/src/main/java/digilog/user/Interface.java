@@ -1,6 +1,9 @@
-package digilog;
+package digilog.user;
 
+import digilog.sql.SQLdatabase;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,18 +24,27 @@ public class Interface {
     @Autowired
     SQLdatabase database;
     
+    String currentUser;
+    
     //use this method to do a basic text interface
     public void run(Scanner reader) throws SQLException, ClassNotFoundException{
-        System.out.println("\nWelcome to Digilog version 0.04\n");
+        System.out.println("\nWelcome to Digilog version 0.05\n");
+        System.out.println("\ngive username (additions will be saved under this name in future versions)");
+        String currentUser = reader.nextLine();
+        System.out.println("");
         while(true){
             System.out.println("----------------------------------------------------"
                     + "\n"
-                    + "Commands:\n"
+                    + "Current user: "+currentUser
+                    + "\nThis database has: ("+database.getMediaCount("Digilog")
+                    +") titles, ("+database.getTypeCount("Digilog")
+                    +") mediatypes and ("+database.getGenreCount("Digilog")+") genres."
+                    + "\nCommands:\n"
                     + "\t x -- stops program\n"
                     + "\t ? -- lists commands\n"
                     + "\t 1 -- add media\n"
                     + "\t 2 -- remove media\n"
-                    + "\t 3 -- list media\n"
+                    + "\t 3 -- list entries\n"
                     + "\t 4 -- change settings\n");
             String command = reader.nextLine();
             if(command.equals("x")){
@@ -42,12 +54,63 @@ public class Interface {
             else if(command.equals("luotaulut")){
                 database.createEmptyDatabase("Digilog");
             }
-            else if(command.equals("1")){System.out.println("to be added");}
-            else if(command.equals("2")){System.out.println("to be added");}
-            else if(command.equals("3")){System.out.println("to be added");}
+            else if(command.equals("1")){
+                System.out.println("give type (book, movie etc)");
+                String aType = reader.nextLine();
+                System.out.println("\ntype: "+aType);
+                System.out.println("\ngive title");
+                String aTitle = reader.nextLine();
+                System.out.println("\ntitle: "+aTitle);
+                System.out.println("\nedit further [Y/N]");
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate localDate = LocalDate.now();
+                String date = dtf.format(localDate);
+                String fEdit = reader.nextLine();
+                if(fEdit.equals("Y")){
+                    System.out.println("add title length (give int)");
+                    int length = Integer.parseInt(reader.nextLine());
+                    System.out.println("add publication date (yyyy-MM-dd)");
+                    String pdate = reader.nextLine();
+                    System.out.println("add a comment");
+                    String comment = reader.nextLine();
+                    database.addAddition(currentUser, "Digilog", date, comment);
+                    database.addMedia("Digilog", aTitle, length, pdate);
+                    database.additionToMedia(currentUser, "Digilog", aTitle);
+                    while (true){
+                        System.out.println("add genres ('x' to stop, give an existing genre)");
+                        String gName = reader.nextLine();
+                        if(gName.equals("x")){
+                            break;
+                        }
+                        database.genreToMedia(currentUser, "Digilog", aTitle, gName);
+                    }
+                }else{
+                    database.addAddition(currentUser, "Digilog", date,
+                        " ");
+                    database.addMedia("Digilog", aTitle, 0, date);
+                    database.additionToMedia(currentUser, "Digilog", aTitle);
+                }
+                database.typeToMedia(currentUser, "Digilog", aTitle, aType);
+            }
+            else if(command.equals("2")){
+                System.out.println("give title of removable addition");
+                String rName = reader.nextLine();
+                database.removeAddition(currentUser, "Digilog", rName);
+            }
+            else if(command.equals("3")){
+                List<String> additions = database.listAdditions(currentUser,"Digilog");
+                int i = 0;
+                System.out.println("Entries:\n");
+                while (true){
+                    if(i==additions.size()){
+                        break;
+                    }
+                    System.out.println(additions.get(i));
+                    i++;
+                }
+            }
             else if(command.equals("4")){changeSettings(reader);}
-            else{System.out.println("command not recognized");;}
-            
+            else{System.out.println("command not recognized");}
         }
     }
     

@@ -9,6 +9,7 @@ package digilog;
  *
  * @author kalmikko
  */
+import digilog.user.Interface;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

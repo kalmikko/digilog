@@ -5,7 +5,7 @@
  */
 
 import digilog.DigilogSovellus;
-import digilog.SQLdatabase;
+import digilog.sql.SQLdatabase;
 import java.sql.SQLException;
 import java.util.List;
 import org.junit.After;
@@ -50,6 +50,22 @@ public class sqlTest {
         assertTrue(genrecount==sqldb.getGenreCount("Digilog"));
     }
     @Test
+    public void addingAndRemovingAddition() throws SQLException, ClassNotFoundException{
+//        sqldb.createEmptyDatabase("testdb");
+        int additioncount = sqldb.getAdditionCount("Digilog");
+        sqldb.addAddition("testuser1","Digilog", "2011-01-01", "testcomment1");
+        //System.out.println(genrecount+"  "+sqldb.getGenreCount("testdb"));
+        assertTrue(additioncount==sqldb.getAdditionCount("Digilog")-1);
+    }
+    @Test
+    public void addingAndRemovingMedia() throws SQLException, ClassNotFoundException{
+//        sqldb.createEmptyDatabase("testdb");
+        int mediacount = sqldb.getMediaCount("Digilog");
+        sqldb.addMedia("Digilog","testmedia1", 0, "1990-01-01");
+        //System.out.println(genrecount+"  "+sqldb.getGenreCount("testdb"));
+        assertTrue(mediacount==sqldb.getMediaCount("Digilog")-1);
+    }
+    @Test
     public void addingAndRemovingMediaType() throws SQLException, ClassNotFoundException{
         //sqldb.createEmptyDatabase("testdb");
         int typecount = sqldb.getTypeCount("Digilog");
@@ -71,4 +87,6 @@ public class sqlTest {
         sqldb.removeType("testtype1", "Digilog");
         sqldb.removeGenre("testgenre1", "Digilog");
     }
+    
+    
 }
