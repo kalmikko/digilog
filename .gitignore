@@ -4,3 +4,5 @@ Digilog/target
 /Digilog/target/
 .gitignore.save
 .README.md.swp
+Digilog.mv.db
+Digilog-*
