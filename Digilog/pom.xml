@@ -3,12 +3,48 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>digilog</groupId>
     <artifactId>Digilog</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.05</version>
     <packaging>jar</packaging>
     <build>
+<!--        
+        <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.4.RELEASE</version>
+	</parent>-->
+        
     <plugins>
     <!-- muita plugineja -->
     <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <mainClass>${start-class}</mainClass>
+                </configuration>
+                  <executions>
+                    <execution>
+                      <goals>
+                        <goal>repackage</goal>
+                      </goals>
+                    </execution>
+                </executions>
+            </plugin>
+    
+<!--     <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-jar-plugin</artifactId>
+    <version>2.3.2</version>
+    <configuration>
+      <archive>
+        <manifest>
+          <addClasspath>true</addClasspath>
+          <mainClass>digilog.DigilogSovellus</mainClass>
+        </manifest>
+      </archive>
+    </configuration>
+  </plugin>-->
+<!--    <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>1.6</version>
@@ -24,10 +60,18 @@
                                     <mainClass>digilog.DigilogSovellus</mainClass>
                                 </transformer>
                             </transformers>
+                            <filters>
+                    <filter>
+                        <artifact>*:*</artifact>
+                        <excludes>
+                            <exclude>META-INF/</exclude>
+                        </excludes>
+                    </filter>
+                </filters>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-checkstyle-plugin</artifactId>
@@ -138,6 +182,12 @@
             <version>0.8.0</version>
             <scope>test</scope>
         </dependency>
+<!--        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.1.1</version>
+            <scope>test</scope>
+        </dependency>-->
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

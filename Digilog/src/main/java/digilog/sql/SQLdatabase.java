@@ -21,12 +21,17 @@ public class SQLdatabase {
 //    @Autowired
 //    private JdbcTemplate jdbcTemplate;
     
-    //create a blank SQL database
+    /**
+     * method to create an empty database with correct tables
+     * @param name string variable, the name of the created database
+     * @throws SQLException desc
+     * @throws ClassNotFoundException desc 
+     */
     public void createEmptyDatabase(String name) 
             throws SQLException, ClassNotFoundException {
         Statement stat = connectToDB(name);
         stat.executeUpdate("CREATE TABLE Addition(id int, pvm date,comment "
-                + "varchar(500),user varchar(50), PRIMARY KEY (id));");
+                + "varchar(500), PRIMARY KEY (id));");
         stat.executeUpdate("CREATE TABLE Media(id int, name varchar(100), "
                 + "published date, length bigint, PRIMARY KEY (id));");
         stat.executeUpdate("CREATE TABLE Genre(id int, name varchar(100), "
@@ -43,7 +48,6 @@ public class SQLdatabase {
                 + "FOREIGN KEY (mediaID) REFERENCES Media(id),"
                 + " FOREIGN KEY (typeID) REFERENCES Type(id));");
     }
-    
     public Statement connectToDB(String name) throws SQLException {
 //        String dir = "/home/kalmikko/kurssit/_ot2019/ot-harjoitustyo/Digilog/"
 //                + "Digilog/src/main/java/digilog";
@@ -53,8 +57,7 @@ public class SQLdatabase {
         return stat;
     }
     
-    public List<String> listAdditions(String user, String dbName) 
-            throws SQLException {
+    public List<String> listAdditions(String dbName) throws SQLException {
         List<String> additionOutput = new ArrayList<>();
         Statement stat = connectToDB(dbName);
         additionOutput.add("id\ttitle\tadded\tpublished\tcomment(y/n)\n"
@@ -79,9 +82,7 @@ public class SQLdatabase {
         }
         return additionOutput;
     }
-    
-    public void additionToMedia(String username, String dbName, 
-            String title) throws SQLException {
+    public void additionToMedia(String dbName, String title) throws SQLException {
         Statement stat = connectToDB(dbName);
         ResultSet output1 = stat.executeQuery("SELECT id AS id FROM Media"
                 + " WHERE name = '" + title + "';");
@@ -91,9 +92,7 @@ public class SQLdatabase {
         stat.executeUpdate("INSERT INTO AdditionMediaLT (additionID,mediaID)"
                 + " VALUES (" + additionID + ", " + mediaID + " );");
     }
-    
-    public void typeToMedia(String username, String dbName, String name, 
-            String type) throws SQLException {
+    public void typeToMedia(String dbName, String name, String type) throws SQLException {
         Statement stat = connectToDB(dbName);
         ResultSet output1 = stat.executeQuery("SELECT id AS id FROM Type"
                 + " WHERE name ='" + type + "';");
@@ -106,9 +105,7 @@ public class SQLdatabase {
         stat.executeUpdate("INSERT INTO MediaTypeLT (mediaID,typeID)"
                 + " VALUES (" + mediaID + ", " + typeID + " );");
     }
-    
-    public void genreToMedia(String username, String dbName, String name, 
-            String genre) throws SQLException {
+    public void genreToMedia(String dbName, String name, String genre) throws SQLException {
         Statement stat = connectToDB(dbName);
         ResultSet output1 = stat.executeQuery("SELECT id AS id FROM Genre"
                 + " WHERE name ='" + genre + "';");
@@ -121,7 +118,6 @@ public class SQLdatabase {
         stat.executeUpdate("INSERT INTO MediaGenreLT (mediaID,genreID)"
                 + " VALUES (" + mediaID + ", " + genreID + " );");
     }
-    
     public void addMedia(String dbName, String title, int length, 
             String pdate) throws SQLException {
         Statement stat = connectToDB(dbName);
@@ -130,27 +126,22 @@ public class SQLdatabase {
                 + " VALUES (" + id + ", '" + title + "', '" + pdate + "', " 
                 + length + ");");
     }
-    
-    public void addAddition(String username, String dbName, String date,
+    public void addAddition(String dbName, String date,
         String comment) throws SQLException {
         Statement stat = connectToDB(dbName);
         int id = getAdditionID(dbName) + 1;
-        stat.executeUpdate("INSERT INTO Addition (id, pvm, comment, user) "
+        stat.executeUpdate("INSERT INTO Addition (id, pvm, comment) "
                 + "VALUES (" + id + ", '" + date + "', "
-                        + "'" + comment + "', '" + username + "');");
+                        + "'" + comment + "');");
     }
-    
-    public void removeAddition(String username, String dbName, 
-            String name) throws SQLException {
+    public void removeAddition(String dbName, String name) throws SQLException {
         Statement stat = connectToDB(dbName);
         int id = stat.executeQuery("SELECT id AS id FROM Addition"
                 + " JOIN AdditionMediaLT ON AdditionMediaLT.additionID = Addition.id"
                 + " JOIN Media on Media.id = AdditionMediaLT.mediaID"
                 + " WHERE Media.name = '" + name + "';").getInt("id");
-        stat.executeUpdate("DELETE FROM Addition WHERE (id =" + id + ")"
-                + " AND (user = '" + username + "');");
+        stat.executeUpdate("DELETE FROM Addition WHERE (id =" + id + ");");
     }
-    
     public int getMediaCount(String dbName) throws SQLException {
         Statement stat = connectToDB(dbName);
         ResultSet output = stat.executeQuery("SELECT * FROM Media;");

@@ -24,18 +24,12 @@ public class Interface {
     @Autowired
     SQLdatabase database;
     
-    String currentUser;
-    
     //use this method to do a basic text interface
     public void run(Scanner reader) throws SQLException, ClassNotFoundException{
         System.out.println("\nWelcome to Digilog version 0.05\n");
-        System.out.println("\ngive username (additions will be saved under this name in future versions)");
-        String currentUser = reader.nextLine();
-        System.out.println("");
         while(true){
             System.out.println("----------------------------------------------------"
                     + "\n"
-                    + "Current user: "+currentUser
                     + "\nThis database has: ("+database.getMediaCount("Digilog")
                     +") titles, ("+database.getTypeCount("Digilog")
                     +") mediatypes and ("+database.getGenreCount("Digilog")+") genres."
@@ -73,32 +67,32 @@ public class Interface {
                     String pdate = reader.nextLine();
                     System.out.println("add a comment");
                     String comment = reader.nextLine();
-                    database.addAddition(currentUser, "Digilog", date, comment);
+                    database.addAddition("Digilog", date, comment);
                     database.addMedia("Digilog", aTitle, length, pdate);
-                    database.additionToMedia(currentUser, "Digilog", aTitle);
+                    database.additionToMedia("Digilog", aTitle);
                     while (true){
                         System.out.println("add genres ('x' to stop, give an existing genre)");
                         String gName = reader.nextLine();
                         if(gName.equals("x")){
                             break;
                         }
-                        database.genreToMedia(currentUser, "Digilog", aTitle, gName);
+                        database.genreToMedia("Digilog", aTitle, gName);
                     }
                 }else{
-                    database.addAddition(currentUser, "Digilog", date,
+                    database.addAddition("Digilog", date,
                         " ");
                     database.addMedia("Digilog", aTitle, 0, date);
-                    database.additionToMedia(currentUser, "Digilog", aTitle);
+                    database.additionToMedia("Digilog", aTitle);
                 }
-                database.typeToMedia(currentUser, "Digilog", aTitle, aType);
+                database.typeToMedia("Digilog", aTitle, aType);
             }
             else if(command.equals("2")){
                 System.out.println("give title of removable addition");
                 String rName = reader.nextLine();
-                database.removeAddition(currentUser, "Digilog", rName);
+                database.removeAddition("Digilog", rName);
             }
             else if(command.equals("3")){
-                List<String> additions = database.listAdditions(currentUser,"Digilog");
+                List<String> additions = database.listAdditions("Digilog");
                 int i = 0;
                 System.out.println("Entries:\n");
                 while (true){
