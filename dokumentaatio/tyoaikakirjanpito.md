@@ -16,4 +16,8 @@
 
 10.4 checkstyle, testiluokat, jne ~2h
 
-tot: ~18h
+15.4 jar tiedoston luominen ~3h
+
+16.4 jar tiedoston luominen ~2h
+
+tot: ~23h
