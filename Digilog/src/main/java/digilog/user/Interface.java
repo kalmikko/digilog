@@ -24,9 +24,20 @@ public class Interface {
     @Autowired
     SQLdatabase database;
     
+    @Autowired
+    InterfaceLogic logic;
+    
     //use this method to do a basic text interface
     public void run(Scanner reader) throws SQLException, ClassNotFoundException{
         System.out.println("\nWelcome to Digilog version 0.05\n");
+        System.out.println("\nchecking database...");
+        if(!logic.databaseFound()){
+            System.out.println("no database found, creating one...");
+            database.createEmptyDatabase("Digilog");
+            System.out.println("done!");
+        }else{
+            System.out.println("database found!");
+        }
         while(true){
             System.out.println("----------------------------------------------------"
                     + "\n"
