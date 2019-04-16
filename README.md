@@ -10,6 +10,6 @@ This project will be a catalogue of books and movies that the user has watched. 
 
 [arkkitehtuurikuvaus.md](https://github.com/kalmikko/ot-harjoitustyo/blob/master/dokumentaatio/Arkkitehtuurikuvaus.md)
 
-## Latest release
+## Releases
 
-[newest release](https://github.com/kalmikko/ot-harjoitustyo/releases/tag/0.05)
+[v0.05](https://github.com/kalmikko/ot-harjoitustyo/releases/tag/0.05)
