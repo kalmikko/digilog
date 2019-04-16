@@ -12,4 +12,4 @@ This project will be a catalogue of books and movies that the user has watched. 
 
 ## Latest release
 
-TBD
+[newest release](https://github.com/kalmikko/ot-harjoitustyo/releases/tag/0.05)
