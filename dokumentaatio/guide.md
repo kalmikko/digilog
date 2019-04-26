@@ -4,4 +4,4 @@
 
 2. download the jar file
 
-3. run the jar file (linux: on terminal "java -jar FILENAME, should also work on windows)
+3. run the jar file (command "java -jar FILENAME" in terminal if using a linux based system and in command line if using a windows based system)
