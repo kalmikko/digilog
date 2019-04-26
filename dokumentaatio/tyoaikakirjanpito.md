@@ -22,4 +22,6 @@
 
 25.4 käyttöjärjestelmälogiikkaa ~3h
 
-tot: ~26h
+26.4 testauksen laajentaminen, dokumentaatio ̃2h
+
+tot: ~28h
