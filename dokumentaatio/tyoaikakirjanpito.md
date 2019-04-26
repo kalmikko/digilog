@@ -20,4 +20,6 @@
 
 16.4 jar tiedoston luominen ~2h
 
-tot: ~23h
+25.4 käyttöjärjestelmälogiikkaa ~3h
+
+tot: ~26h

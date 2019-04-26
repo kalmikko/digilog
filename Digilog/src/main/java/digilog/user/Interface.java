@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
+import org.h2.jdbc.JdbcSQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -29,7 +30,8 @@ public class Interface {
     
     //use this method to do a basic text interface
     public void run(Scanner reader) throws SQLException, ClassNotFoundException{
-        System.out.println("\nWelcome to Digilog version 0.05\n");
+        System.out.println("\nWelcome to Digilog version 0.06\n");
+        System.out.println("this interface is temporary.");
         System.out.println("\nchecking database...");
         if(!logic.databaseFound()){
             System.out.println("no database found, creating one...");
@@ -103,16 +105,7 @@ public class Interface {
                 database.removeAddition("Digilog", rName);
             }
             else if(command.equals("3")){
-                List<String> additions = database.listAdditions("Digilog");
-                int i = 0;
-                System.out.println("Entries:\n");
-                while (true){
-                    if(i==additions.size()){
-                        break;
-                    }
-                    System.out.println(additions.get(i));
-                    i++;
-                }
+                viewAdditions(reader);
             }
             else if(command.equals("4")){changeSettings(reader);}
             else{System.out.println("command not recognized");}
@@ -175,6 +168,83 @@ public class Interface {
             }
         }
         
+    }
+    
+    public void viewAdditions(Scanner reader) throws SQLException{
+        List<List<String>> additions = database.listAdditions("Digilog");
+                int i = 0;
+                System.out.println("ID\tTITLE\t\tTYPE\tADDED\t\tPUBLISHED\tCOMMENTS");
+                while(true){
+                    while (true){
+                        if(i==additions.size()){
+                            break;
+                        }
+                        System.out.print((i+1)+"\t");
+                        for(int j = 0; j<4; j++){
+                            System.out.print(additions.get(i).get(j)+"\t");
+                            if(j==0){
+                                System.out.print("\t");
+                            }
+                        }
+                        String comment = additions.get(i).get(4);
+                        if(comment.length()<2){
+                            System.out.print("none");
+                        }else{
+                            System.out.print("yes");
+                        }
+                        i++;
+                        System.out.println("");
+                    }
+                    System.out.println("exit with 'x', expanded view with addition id");
+                    String command = reader.nextLine();
+                    if(command.equals("x")){
+                        break;
+                    }
+                    int id=0;
+                    try {
+                        id = Integer.parseInt(command)-1;
+                    } catch (NumberFormatException e){
+                        System.out.println("command not recognized");
+                        break;
+                    }
+                    
+                    if(id>=0 && id<=additions.size()){
+                        System.out.println("TITLE: "+ additions.get(id).get(0));
+                        System.out.println("TYPE: "+ additions.get(id).get(1));
+                        System.out.print("LENGTH: ");
+                        int len = Integer.parseInt(additions.get(id).get(5));
+                        if(len==0){
+                            System.out.println("not specified");
+                        }else{
+                            System.out.println(len);
+                        }
+                        System.out.println("PUBLISHED: "+ additions.get(id).get(3));
+                        System.out.print("GENRES: ");
+                        try{
+                            List<String> genres = database.listAdditionGenres("Digilog", additions.get(id).get(0));
+                        int l = 0;
+                        while(true){
+                            if(genres.size()==l){
+                                break;
+                            }
+                            System.out.print(genres.get(l)+" ");
+                            l++;
+                        }
+                        System.out.println("");
+                        } catch (JdbcSQLException e){
+                            System.out.println("no genres");
+                        }
+                        System.out.println("\nhistory\n");
+                        System.out.println("date: "+ additions.get(id).get(2));
+                        System.out.println("comment:");
+                        System.out.println("\t"+additions.get(id).get(4));
+                    }
+                    else{
+                        System.out.println("invalid id");
+                        break;
+                    }
+                }
+                    
     }
     
 }

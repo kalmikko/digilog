@@ -7,6 +7,7 @@ package digilog.sql;
  */
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -57,15 +58,37 @@ public class SQLdatabase {
         return stat;
     }
     
-    public List<String> listAdditions(String dbName) throws SQLException {
-        List<String> additionOutput = new ArrayList<>();
+    public List<String> listAdditionGenres(String dbName, String title) throws SQLException{
+        List<String> genres = new ArrayList<>();
         Statement stat = connectToDB(dbName);
-        additionOutput.add("id\ttitle\tadded\tpublished\tcomment(y/n)\n"
-                + "-----------------------------------------------------");
+        ResultSet outputSQL = stat.executeQuery("SELECT Genre.name FROM Genre "
+                + "JOIN MediaGenreLT ON MediaGenreLT.genreID = Genre.ID "
+                + "JOIN Media ON Media.id = MediaGenreLT.mediaID "
+                + "WHERE Media.name ='" + title + "';");
+        outputSQL.first();
+        while(true){
+            genres.add(outputSQL.getString("Genre.name"));
+            if(outputSQL.isLast()){
+                break;
+            }
+            outputSQL.next();
+        }
+        return genres;
+    }
+    
+    public List<List<String>> listAdditions(String dbName) throws SQLException {
+        List<List<String>> additionOutput = new ArrayList<>();
+        Statement stat = connectToDB(dbName);
+        //additionOutput.add(Arrays.asList("id","title","type", "added","published","comments"));
+//        additionOutput.add("id\ttitle\tadded\tpublished\tcomment(y/n)\n"
+//                + "-----------------------------------------------------");
         ResultSet outputSQL = stat.executeQuery(""
-                + "SELECT Addition.id, Media.name, pvm, Media.published, comment FROM Addition"
+                + "SELECT Addition.id, Media.name, Type.name, pvm, Media.published,"
+                + " comment, Media.length FROM Addition"
                 + " JOIN AdditionMediaLT ON AdditionMediaLT.additionID = Addition.id"
-                + " JOIN Media ON Media.id = AdditionMediaLT.mediaID;");
+                + " JOIN Media ON Media.id = AdditionMediaLT.mediaID"
+                + " JOIN MediaTypeLT ON MediaTypeLT.mediaID = Media.id"
+                + " JOIN Type ON Type.id = MediaTypeLT.typeID;");
         outputSQL.first();
         int i = 0; 
         int j = getAdditionCount(dbName);
@@ -74,10 +97,18 @@ public class SQLdatabase {
                 break;
             }
             i++;
-            additionOutput.add(outputSQL.getInt("Addition.id") + "\t" + 
-                    outputSQL.getString("Media.name") + "\t" + 
-                    outputSQL.getDate("pvm") + "\t" + outputSQL.getDate("Media.published") + 
-                    "\t" + outputSQL.getString("comment"));
+//            additionOutput.add(outputSQL.getInt("Addition.id") + "\t" + 
+//                    outputSQL.getString("Media.name") + "\t" + 
+//                    outputSQL.getDate("pvm") + "\t" + outputSQL.getDate("Media.published") + 
+//                    "\t" + outputSQL.getString("comment"));
+            String comments = "None";
+            if(outputSQL.getString("comment").length()>3){
+                comments = "Yes";
+            }
+            additionOutput.add(new ArrayList<String>(Arrays.asList(outputSQL.getString("Media.name"), 
+                    outputSQL.getString("Type.name"),outputSQL.getDate("pvm").toString(), 
+                    outputSQL.getDate("Media.published").toString(), outputSQL.getString("comment"), 
+                    outputSQL.getString("Media.length"))));
             outputSQL.next();
         }
         return additionOutput;

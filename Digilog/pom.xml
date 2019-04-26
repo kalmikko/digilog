@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>digilog</groupId>
     <artifactId>Digilog</artifactId>
-    <version>0.05</version>
+    <version>0.06</version>
     <packaging>jar</packaging>
     <build>
 <!--        
@@ -14,9 +14,9 @@
 	</parent>-->
         
     <plugins>
-    <!-- muita plugineja -->
     <plugin>
                 <groupId>org.springframework.boot</groupId>
+<!--                <version></version>-->
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <fork>true</fork>
@@ -182,12 +182,12 @@
             <version>0.8.0</version>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>
+        <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-jar-plugin</artifactId>
             <version>3.1.1</version>
             <scope>test</scope>
-        </dependency>-->
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
