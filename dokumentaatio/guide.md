@@ -25,20 +25,20 @@ When first time opening the jar file, the program will make the sql database for
 
 Basic commands can be listed after running the jar file with a terminal. The basic commands are:
 
-  show media all - list all additions
+  - show media all - list all additions
 
-  info all - get all profile info
+  - info all - get all profile info
 
-  add mediatype MEDIATYPE_NAME - add a mediatype
-  add genre GENRE_NAME - add a genre
+  - add mediatype MEDIATYPE_NAME - add a mediatype
+  - add genre GENRE_NAME - add a genre
   
 After adding some mediatypes and genres (or if you use one of the pre-built profiles) the commands will update as
   
-  show media all - list all additions
-  show media book - list book additions
+  - show media all - list all additions
+  - show media book - list book additions
 
-  info all - get all profile info
+  - info all - get all profile info
 
-  add book BOOK_NAME - add book addition
-  add mediatype MEDIATYPE_NAME - add a mediatype
-  add genre GENRE_NAME - add a genre
+  - add book BOOK_NAME - add book addition
+  - add mediatype MEDIATYPE_NAME - add a mediatype
+  - add genre GENRE_NAME - add a genre
