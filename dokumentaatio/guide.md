@@ -10,7 +10,7 @@
 
 to run the jar file, go to the file path in terminal and type "java -jar FILENAME"
 
-to generate jacoco test report, download the whole project, go to Digilog folder in terminal and type "mvn jacoco:report"
+to generate jacoco test report, download the whole project, go to Digilog folder in terminal and type "mvn jacoco:report". The tests assume that none of the sql tables are empty.
 
 for checkstyle do the same, but use command "mvn jxr:jxr checkstyle:checkstyle"
 
