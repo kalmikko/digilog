@@ -4,15 +4,15 @@ This project will be a catalogue of books and movies that the user has watched. 
 
 ## Documentation
 
-[vaatimusmaarittely.md](https://github.com/kalmikko/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+[functionality](https://github.com/kalmikko/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-[tyoaikakirjanpito.md](https://github.com/kalmikko/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
+[schedule](https://github.com/kalmikko/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
-[arkkitehtuurikuvaus.md](https://github.com/kalmikko/ot-harjoitustyo/blob/master/dokumentaatio/Arkkitehtuurikuvaus.md)
+[architecture](https://github.com/kalmikko/ot-harjoitustyo/blob/master/dokumentaatio/architecture.md)
 
-[käyttöohje](https://github.com/kalmikko/ot-harjoitustyo/blob/master/dokumentaatio/guide.md)
+[guide](https://github.com/kalmikko/ot-harjoitustyo/blob/master/dokumentaatio/guide.md)
 
 
 ## Releases
 
-[v0.06](https://github.com/kalmikko/ot-harjoitustyo/releases/tag/0.06)
+[v0.07](https://github.com/kalmikko/ot-harjoitustyo/releases/tag/0.07)
