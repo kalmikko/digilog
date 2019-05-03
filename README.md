@@ -1,6 +1,6 @@
 # Digilog
 
-This project will be a catalogue of books and movies that the user has watched. The user will be able to create an username, and based on that there will be created a SQL database that is able to store different types of media the user has consumed.
+A logging software with flexible categorization. You can add data categories (like movie or book) and genres (like comedy or adventure) freely and then add additions to your database. The information is saved in a local SQL database.
 
 ## Documentation
 
