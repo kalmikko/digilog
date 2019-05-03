@@ -1,19 +1,15 @@
 **Digilog**
 
-This project will be a catalogue of books and movies that the user has watched. The user will be able to create an username, and based on that there will be created a SQL database that is able to store different types of media the user has consumed.
+A logging software with flexible categorization. You can add data categories (like movie or book) and genres (like comedy or adventure) freely and then add additions to your database. The information is saved in a local SQL database.
 
 **Basic functionality**
 
-- make a SQL database with the users username
+- create a local sql database to save user data into
 
-- store movies and books that the user has watched
+- add into database different categories, like movie or book
 
-- store the date watched and the date the book/movie was created
+- add into database different genres like adventure or comedy
 
-- assign a genre to a book/movie
+- add and remove additions with a name, published date, correct type and correct genres
 
-- create new genres and forms of media that the database can store
-
-- list all movies/books
-
-- list movies/books with some parameters
+- show your additions in a basic table, and filter it based on data category like book or movie
