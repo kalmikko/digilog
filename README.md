@@ -8,7 +8,7 @@ A logging software with flexible categorization. You can add data categories (li
 
 [schedule](https://github.com/kalmikko/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
-[architecture](https://github.com/kalmikko/digilog/blob/master/dokumentaatio/architecture.md
+[architecture](https://github.com/kalmikko/digilog/blob/master/dokumentaatio/architecture.md)
 
 [guide](https://github.com/kalmikko/ot-harjoitustyo/blob/master/dokumentaatio/guide.md)
 
