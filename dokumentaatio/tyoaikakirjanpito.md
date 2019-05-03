@@ -22,6 +22,10 @@
 
 25.4 käyttöjärjestelmälogiikkaa ~3h
 
-26.4 testauksen laajentaminen, dokumentaatio ̃2h
+26.4 testauksen laajentaminen, dokumentaatio ~2h
 
-tot: ~28h
+29.4 uusi käyttöliittymä ~2h
+
+30.4 uusi käyttöliittymä ~3h
+
+tot: ~33h

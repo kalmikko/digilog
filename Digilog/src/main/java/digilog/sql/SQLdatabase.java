@@ -1,10 +1,5 @@
 package digilog.sql;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,10 +13,6 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class SQLdatabase {
-    
-//    @Autowired
-//    private JdbcTemplate jdbcTemplate;
-    
     /**
      * method to create an empty database with correct tables
      * @param name string variable, the name of the created database
@@ -50,15 +41,13 @@ public class SQLdatabase {
                 + " FOREIGN KEY (typeID) REFERENCES Type(id));");
     }
     public Statement connectToDB(String name) throws SQLException {
-//        String dir = "/home/kalmikko/kurssit/_ot2019/ot-harjoitustyo/Digilog/"
-//                + "Digilog/src/main/java/digilog";
         Connection conn = DriverManager.getConnection("jdbc:h2:./" + name, ""
                 + "sa", "");
         Statement stat = conn.createStatement();
         return stat;
     }
     
-    public List<String> listAdditionGenres(String dbName, String title) throws SQLException{
+    public List<String> listAdditionGenres(String dbName, String title) throws SQLException {
         List<String> genres = new ArrayList<>();
         Statement stat = connectToDB(dbName);
         ResultSet outputSQL = stat.executeQuery("SELECT Genre.name FROM Genre "
@@ -66,9 +55,9 @@ public class SQLdatabase {
                 + "JOIN Media ON Media.id = MediaGenreLT.mediaID "
                 + "WHERE Media.name ='" + title + "';");
         outputSQL.first();
-        while(true){
+        while (true) {
             genres.add(outputSQL.getString("Genre.name"));
-            if(outputSQL.isLast()){
+            if (outputSQL.isLast()) {
                 break;
             }
             outputSQL.next();
@@ -79,9 +68,6 @@ public class SQLdatabase {
     public List<List<String>> listAdditions(String dbName) throws SQLException {
         List<List<String>> additionOutput = new ArrayList<>();
         Statement stat = connectToDB(dbName);
-        //additionOutput.add(Arrays.asList("id","title","type", "added","published","comments"));
-//        additionOutput.add("id\ttitle\tadded\tpublished\tcomment(y/n)\n"
-//                + "-----------------------------------------------------");
         ResultSet outputSQL = stat.executeQuery(""
                 + "SELECT Addition.id, Media.name, Type.name, pvm, Media.published,"
                 + " comment, Media.length FROM Addition"
@@ -97,17 +83,9 @@ public class SQLdatabase {
                 break;
             }
             i++;
-//            additionOutput.add(outputSQL.getInt("Addition.id") + "\t" + 
-//                    outputSQL.getString("Media.name") + "\t" + 
-//                    outputSQL.getDate("pvm") + "\t" + outputSQL.getDate("Media.published") + 
-//                    "\t" + outputSQL.getString("comment"));
-            String comments = "None";
-            if(outputSQL.getString("comment").length()>3){
-                comments = "Yes";
-            }
             additionOutput.add(new ArrayList<String>(Arrays.asList(outputSQL.getString("Media.name"), 
-                    outputSQL.getString("Type.name"),outputSQL.getDate("pvm").toString(), 
-                    outputSQL.getDate("Media.published").toString(), outputSQL.getString("comment"), 
+                    outputSQL.getString("Type.name"), outputSQL.getDate("pvm").toString(), 
+                    outputSQL.getDate("Media.published").toString(), 
                     outputSQL.getString("Media.length"))));
             outputSQL.next();
         }
@@ -167,11 +145,15 @@ public class SQLdatabase {
     }
     public void removeAddition(String dbName, String name) throws SQLException {
         Statement stat = connectToDB(dbName);
-        int id = stat.executeQuery("SELECT id AS id FROM Addition"
+        ResultSet output = stat.executeQuery("SELECT Addition.id AS output FROM Addition"
                 + " JOIN AdditionMediaLT ON AdditionMediaLT.additionID = Addition.id"
                 + " JOIN Media on Media.id = AdditionMediaLT.mediaID"
-                + " WHERE Media.name = '" + name + "';").getInt("id");
-        stat.executeUpdate("DELETE FROM Addition WHERE (id =" + id + ");");
+                + " WHERE Media.name = '" + name + "';");
+        output.last();
+        int id = output.getInt("output");
+        stat.executeUpdate("DELETE FROM AdditionMediaLT WHERE additionID = " +
+                id + ";");
+        stat.executeUpdate("DELETE FROM Addition WHERE id = " + id + ";");
     }
     public int getMediaCount(String dbName) throws SQLException {
         Statement stat = connectToDB(dbName);
