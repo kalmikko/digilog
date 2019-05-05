@@ -12,6 +12,8 @@ A logging software with flexible categorization. You can add data categories (li
 
 [guide](https://github.com/kalmikko/ot-harjoitustyo/blob/master/dokumentaatio/guide.md)
 
+[tests](https://github.com/kalmikko/digilog/blob/master/dokumentaatio/testing.md)
+
 
 ## Release
 
