@@ -28,4 +28,6 @@
 
 30.4 uusi käyttöliittymä ~3h
 
-tot: ~33h
+3.5 viimeisen releasen valmistelu ~5h
+
+tot: ~38h
