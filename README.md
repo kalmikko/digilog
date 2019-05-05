@@ -17,4 +17,4 @@ A logging software with flexible categorization. You can add data categories (li
 
 ## Release
 
-[v0.07](https://github.com/kalmikko/ot-harjoitustyo/releases/tag/0.07)
+[loppupalautus](https://github.com/kalmikko/ot-harjoitustyo/releases/tag/0.07)
