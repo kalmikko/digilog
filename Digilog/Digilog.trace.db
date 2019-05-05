@@ -1,140 +1,58 @@
-2019-05-03 11:43:46 jdbc[162]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:43:46 jdbc[163]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:43:46 jdbc[165]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:44:00 jdbc[179]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:44:00 jdbc[180]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:44:00 jdbc[182]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:44:00 jdbc[183]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:44:09 jdbc[190]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:44:09 jdbc[192]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:44:09 jdbc[193]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:44:17 jdbc[200]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:44:22 jdbc[207]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:44:29 jdbc[214]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:44:32 jdbc[218]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:44:32 jdbc[220]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:44:32 jdbc[221]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:46:23 jdbc[25]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:46:23 jdbc[27]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:46:23 jdbc[28]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:47:04 jdbc[5]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:47:04 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:47:04 jdbc[8]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:48:45 jdbc[5]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:48:45 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 11:48:45 jdbc[8]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:24:28 jdbc[5]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:24:28 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:24:28 jdbc[8]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:24:40 jdbc[22]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:24:40 jdbc[24]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:24:40 jdbc[25]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:24:40 jdbc[26]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:24:48 jdbc[33]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:24:48 jdbc[34]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:29:03 jdbc[5]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:29:03 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:29:03 jdbc[8]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:29:03 jdbc[9]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:29:09 jdbc[17]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:29:09 jdbc[18]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:29:09 jdbc[19]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:49:46 jdbc[6]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:49:46 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 12:49:46 jdbc[8]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:15:45 jdbc[6]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:15:45 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:15:45 jdbc[8]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:16:37 jdbc[6]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:16:37 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:16:37 jdbc[8]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:20:57 jdbc[6]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:20:57 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:20:57 jdbc[8]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:22:06 jdbc[6]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:22:06 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:22:06 jdbc[8]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:28:25 jdbc[6]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:28:25 jdbc[7]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:28:25 jdbc[8]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:29:37 jdbc[35]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:29:37 jdbc[36]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:29:37 jdbc[37]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:29:37 jdbc[38]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:29:50 jdbc[46]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:29:50 jdbc[47]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:29:50 jdbc[48]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:29:53 jdbc[56]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:29:53 jdbc[57]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:29:57 jdbc[65]: exception
-org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
-2019-05-03 13:30:21 jdbc[6]: exception
+2019-05-03 13:54:02 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/local/kalmikko/kurssit/_ot2019/ot-harjoitustyo/Digilog/Digilog.mv.db [1.4.197/7]" [50000-197]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:307)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2506)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:383)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:364)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2934)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2538)
+	at org.h2.engine.Database.open(Database.java:709)
+	at org.h2.engine.Database.openDatabase(Database.java:286)
+	at org.h2.engine.Database.<init>(Database.java:280)
+	at org.h2.engine.Engine.openSession(Engine.java:66)
+	at org.h2.engine.Engine.openSession(Engine.java:179)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:157)
+	at org.h2.engine.Engine.createSession(Engine.java:140)
+	at org.h2.engine.Engine.createSession(Engine.java:28)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:351)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:103)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at digilog.sql.SQLdatabase.connectToDB(SQLdatabase.java:44)
+	at digilog.sql.SQLdatabase.getTypeCount(SQLdatabase.java:268)
+	at digilog.user.TextInterface.run(TextInterface.java:123)
+	at digilog.DigilogSovellus.run(DigilogSovellus.java:32)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at digilog.DigilogSovellus.main(DigilogSovellus.java:23)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/local/kalmikko/kurssit/_ot2019/ot-harjoitustyo/Digilog/Digilog.mv.db [1.4.197/7]" [50000-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	... 34 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/local/kalmikko/kurssit/_ot2019/ot-harjoitustyo/Digilog/Digilog.mv.db [1.4.197/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:870)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:350)
+	... 28 more
+2019-05-03 13:54:42 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
+2019-05-03 13:54:55 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
+2019-05-03 13:55:43 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
+2019-05-03 13:55:57 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
+2019-05-05 10:55:53 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
+2019-05-05 10:56:05 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-197]
+2019-05-05 10:56:21 jdbc[5]: exception
 org.h2.jdbc.JdbcSQLException: No data is available [2000-197]

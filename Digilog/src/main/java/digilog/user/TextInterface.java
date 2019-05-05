@@ -125,7 +125,7 @@ public class TextInterface {
                     int additioncount = database.getAdditionCount(dbname);
                     System.out.println("this profile has ("+additioncount+") "
                             + "different additions");
-                    System.out.print("this profile has ("+mediatypecount+") '"
+                    System.out.print("this profile has ("+mediatypecount+") "
                             + "different mediatypes");
                     if(mediatypecount>0){
                     List<String> types = database.listTypes(dbname);

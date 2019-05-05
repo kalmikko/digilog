@@ -35,6 +35,16 @@ public class sqlTest {
     }
     
     @Test
+    public void addingAndRemovingAddition() throws SQLException {
+        int acount = sqldb.getAdditionCount("Digilog");
+        sqldb.addMedia("Digilog", "testmedia1", 0, "1000-01-01");
+        sqldb.addAddition("Digilog", "1000-01-01", "comment");
+        sqldb.additionToMedia("Digilog", "testmedia1");
+        sqldb.removeAddition("Digilog", "testmedia1");
+        assertTrue(acount == sqldb.getAdditionCount("Digilog"));
+    }
+    
+    @Test
     public void sqlIdsAreCorrectIntegers() throws SQLException{
         assertTrue(sqldb.getAdditionID("Digilog")>=0);
         assertTrue(sqldb.getGenreCount("Digilog")>=0);
