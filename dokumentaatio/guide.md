@@ -9,6 +9,7 @@
 ## commands
 
 to run the jar file, go to the file path in terminal and type "java -jar FILENAME"
+
 Sometimes in windows machines the filename has to have the file path "java -jar "{filepath}\FILENAME" "
 
 to generate jacoco test report, download the whole project, go to Digilog folder in terminal and type "mvn jacoco:report". The tests assume that none of the sql tables are empty.
